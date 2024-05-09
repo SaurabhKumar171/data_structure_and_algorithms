@@ -1,7 +1,7 @@
 #include <iostream>
 
-int pattern();
+int data_types();
 
 int main() {
-  pattern();
+    data_types();
 }
