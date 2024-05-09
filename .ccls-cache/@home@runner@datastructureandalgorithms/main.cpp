@@ -1,7 +1,7 @@
 #include <iostream>
 
-int data_types();
+int inverted_left_half_pyramid();
 
 int main() {
-    data_types();
+  inverted_left_half_pyramid();
 }
