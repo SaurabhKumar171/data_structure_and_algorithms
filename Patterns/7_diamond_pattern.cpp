@@ -1,6 +1,15 @@
+ //     *
+ //    * *
+ //   * * *
+ //  * * * *
+ // * * * * *
+ //  * * * *
+ //   * * *
+ //    * *
+ //     *
+
 #include <iostream>
 using namespace std;
-
 
 int diamond(){
   int n=4;
@@ -16,7 +25,7 @@ int diamond(){
     cout << endl;
   }
 
-  for(int i =0 ; i<=n; i++){
+  for(int i =1 ; i<=n; i++){
 
     for(int j =0 ; j<i; j++){
       cout << " ";
