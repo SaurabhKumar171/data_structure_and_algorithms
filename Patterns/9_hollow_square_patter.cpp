@@ -22,4 +22,4 @@ int hollow_square_pattern(){
     cout << endl;
   }
     return 0;
-}
+} 
