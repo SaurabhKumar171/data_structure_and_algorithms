@@ -1,7 +1,7 @@
 #include <iostream>
 
-int diamond();
+int hollow_full_pyramid_pattern();
 
 int main() {
-    diamond();
+    hollow_full_pyramid_pattern();
 }
