@@ -1,7 +1,7 @@
 #include <iostream>
 
-int hollow_Hourglass_Pattern(int n);
+int floyds_Triangle();
 
 int main() {
-    hollow_Hourglass_Pattern(5);
+    floyds_Triangle();
 }
