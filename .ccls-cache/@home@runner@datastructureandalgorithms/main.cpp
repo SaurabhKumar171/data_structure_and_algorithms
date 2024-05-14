@@ -1,7 +1,7 @@
 #include <iostream>
 
-int hollow_diamond_pattern();
+int hollow_Hourglass_Pattern(int n);
 
 int main() {
-    hollow_diamond_pattern();
+    hollow_Hourglass_Pattern(5);
 }
