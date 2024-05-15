@@ -1,7 +1,7 @@
 #include <iostream>
 
-int pascals_Triangle(int n);
+int half_diamond_star_pattern(int n);
 
 int main() {
-    pascals_Triangle(5);
+    half_diamond_star_pattern(5);
 }
