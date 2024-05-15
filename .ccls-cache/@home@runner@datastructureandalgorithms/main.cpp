@@ -1,7 +1,7 @@
 #include <iostream>
 
-int half_diamond_star_inverted_pattern(int n);
+int basic_incrementing_traingle(int n);
 
 int main() {
-    half_diamond_star_inverted_pattern(5);
+    basic_incrementing_traingle(5);
 }
