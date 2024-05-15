@@ -21,4 +21,4 @@ int pascals_Triangle(int n){
     cout << endl;
   }
   return 0;
-}
+} 
