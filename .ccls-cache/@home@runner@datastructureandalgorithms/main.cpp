@@ -1,7 +1,7 @@
 #include <iostream>
 
-int floyds_Triangle();
+int pascals_Triangle(int n);
 
 int main() {
-    floyds_Triangle();
+    pascals_Triangle(5);
 }

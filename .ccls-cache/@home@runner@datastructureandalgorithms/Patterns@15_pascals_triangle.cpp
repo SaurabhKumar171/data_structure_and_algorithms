@@ -1,24 +1,20 @@
 #include <iostream>
 using namespace std;
 
-int pascals_Triangle(int n){
+int pascals_Triangle(int n) {
 
-  for(int i= 0; i < n; i++){
+  for (int i = 1; i <= n; i++) {
 
-    for(int j=0; j < n-i-1; j++){
+    for (int j = 1; j <= n - i - 1; j++) {
       cout << " ";
     }
-
-    for(int k = 0; k < 2*i+1; k++){
-      if(k == 0 || k == 2*i){
-        cout << "1";
-      }
-      else{
-        cout << "7";
-      }
+    int c = 1;
+    for (int k = 1; k <= i; k++) {
+      cout << c << " ";
+      c = c * (i-k)/k;
     }
 
     cout << endl;
   }
   return 0;
-} 
+}
