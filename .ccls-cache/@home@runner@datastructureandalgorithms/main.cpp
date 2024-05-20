@@ -1,7 +1,7 @@
 #include <iostream>
 
-int basic_incrementing_inverted_square_number_pattern(int n);
+int numeric_palindrome_equilateral_pyramid(int n);
 
 int main() {
-    basic_incrementing_inverted_square_number_pattern(5);
+    numeric_palindrome_equilateral_pyramid(6);
 } 
