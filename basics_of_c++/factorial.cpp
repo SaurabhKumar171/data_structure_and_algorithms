@@ -9,3 +9,12 @@ long long int factorial(long long int n){
 
     return fact;
 }
+
+// int main() {
+//   cout << "Enter the number :";
+//   int num;
+//   cin >> num;
+//   long long int ans = factorial(num);
+
+//   cout << "Factorial of "<< num << " is "<< ans;
+// }
