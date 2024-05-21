@@ -1,7 +1,7 @@
 #include <iostream>
 
-int numeric_palindrome_equilateral_pyramid(int n);
+int fancy_pattern_3(int n);
 
 int main() {
-    numeric_palindrome_equilateral_pyramid(6);
+fancy_pattern_3(6);
 } 
