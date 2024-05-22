@@ -1,7 +1,9 @@
 #include <iostream>
+using namespace std;
 
-int fancy_pattern_3(int n);
+int reverse(int n);
 
 int main() {
-fancy_pattern_3(6);
+  int ans = reverse(7788894);
+  cout<< ans;
 } 
