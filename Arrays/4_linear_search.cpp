@@ -23,7 +23,7 @@ int linear_search(){
   return -1;
 }
 
-int main() {
-  int index = linear_search();
-  (index != -1 ? cout << "Found at :"<< index : cout << "Not found");
-}
+// int main() {
+//   int index = linear_search();
+//   (index != -1 ? cout << "Found at :"<< index : cout << "Not found");
+// }
