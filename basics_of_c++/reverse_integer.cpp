@@ -1,11 +1,11 @@
 #include <iostream>
 #include <limits.h>
-using namespace std;
+using namespace std; 
 
 int reverse(int x) {
     bool isNeg = false;
     int res = 0;
-    if(x <= INT_MIN || x > INT_MAX){
+    if(x <= INT_MIN){
         return 0;
     }
 
