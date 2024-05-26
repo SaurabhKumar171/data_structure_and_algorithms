@@ -5,7 +5,6 @@ using namespace std;
 void sort01(vector<int>& arr){
   int i = 0;
   int j = arr.size()-1;
-  int st = 0;
 
   while(i < j){
     if(arr[i] == 1){
@@ -17,27 +16,27 @@ void sort01(vector<int>& arr){
 
 }
 
-int main() {
+// int main() {
 
-  int n;
+//   int n;
 
-  cout << "Enter size of array : ";
-  cin >> n;
+//   cout << "Enter size of array : ";
+//   cin >> n;
 
-  cout << "Enter array elements : ";
-  vector<int> arr(n);
+//   cout << "Enter array elements : ";
+//   vector<int> arr(n);
 
-  for(int i = 0; i < n; i++) {
-    cin >> arr[i];
-  }
+//   for(int i = 0; i < n; i++) {
+//     cin >> arr[i];
+//   }
 
-  sort01(arr);
+//   sort01(arr);
 
-  cout << "Sorted array :" << endl;
+//   cout << "Sorted array :" << endl;
 
-  for(int i = 0; i < n; i++) {
-    cout << arr[i]<< " ";
-  }
+//   for(int i = 0; i < n; i++) {
+//     cout << arr[i]<< " ";
+//   }
 
-  return 0;
-}
+//   return 0;
+// }

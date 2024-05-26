@@ -12,21 +12,29 @@ using namespace std;
 //       return 0;
 // } 
 
-int uniqueElement(vector<int> nums);
+int sort01(vector<int>& arr);
 
 int main() {
-    int n;
 
-    cout << "Enter size of array: ";
-    cin >> n;
+  int n;
 
-    cout << "Enter array elements: ";
-    vector<int> arr(n);
+  cout << "Enter size of array : ";
+  cin >> n;
 
-    for(int i = 0; i < n; i++) {
-        cin >> arr[i];
-    }
+  cout << "Enter array elements : ";
+  vector<int> arr(n);
 
-    cout << "Unique element: " << uniqueElement(arr) << endl;
-    return 0;
+  for(int i = 0; i < n; i++) {
+    cin >> arr[i];
+  }
+
+  sort01(arr);
+
+  cout << "Sorted array :" << endl;
+
+  for(int i = 0; i < n; i++) {
+    cout << arr[i]<< " ";
+  }
+
+  return 0;
 }
