@@ -20,7 +20,7 @@ void find_missing_array_elements_with_duplicates(vector<int>& arr){
     if(arr[i] > 0)
       cout << i+1<< " ";
   }
-}
+}  
 
 // int main() {
 //   int n;
@@ -38,4 +38,4 @@ void find_missing_array_elements_with_duplicates(vector<int>& arr){
 //   find_missing_array_elements_with_duplicates(arr);
 
 //   return 0;
-// }
+// } 
