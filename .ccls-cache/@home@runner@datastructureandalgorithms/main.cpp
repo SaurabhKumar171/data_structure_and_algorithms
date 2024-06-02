@@ -2,39 +2,16 @@
 #include <vector>
 using namespace std;
 
-// int extreme_array(int arr[], int size);
-
-// int main() {
-//       int arr[] = {50, 80, 30, 10, 60};
-//       int size = sizeof(arr) / sizeof(arr[0]);
-
-//       extreme_array(arr, size);
-//       return 0;
-// } 
-
-int sort01(vector<int>& arr);
+void spiralOrderUsingRowChecks(vector<vector<int>>& matrix);
 
 int main() {
+      vector<vector<int>> arr = {
+                    {50, 80, 30, 10, 60,7},
+                    {7,8,9,3,4,8},
+                    {5,6,7,8,9,0}
+                  };
 
-  int n;
+      spiralOrderUsingRowChecks(arr);
+      return 0;
+} 
 
-  cout << "Enter size of array : ";
-  cin >> n;
-
-  cout << "Enter array elements : ";
-  vector<int> arr(n);
-
-  for(int i = 0; i < n; i++) {
-    cin >> arr[i];
-  }
-
-  sort01(arr);
-
-  cout << "Sorted array :" << endl;
-
-  for(int i = 0; i < n; i++) {
-    cout << arr[i]<< " ";
-  }
-
-  return 0;
-}   

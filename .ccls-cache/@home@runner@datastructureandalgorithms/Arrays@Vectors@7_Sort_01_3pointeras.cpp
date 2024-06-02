@@ -2,7 +2,7 @@
 #include <vector>
 using namespace std;
 
-void sortColors(vector<int>& nums) {
+void sortColors2(vector<int>& nums) {
 
     int l = 0;
     int m = 0;
