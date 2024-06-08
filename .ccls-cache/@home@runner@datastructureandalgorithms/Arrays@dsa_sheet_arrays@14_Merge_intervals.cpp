@@ -3,6 +3,8 @@
 #include <vector>
 using namespace std;
 
+
+// Brute force solution
 vector<vector<int>> merge(vector<vector<int>>& intervals) {
 
     int row = intervals.size();
@@ -33,6 +35,6 @@ vector<vector<int>> merge(vector<vector<int>>& intervals) {
         } 
         res.push_back({first, second});      
     }
-
+ 
     return res;
 }
