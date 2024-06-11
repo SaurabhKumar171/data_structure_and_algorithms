@@ -37,7 +37,7 @@ vector<vector<int>> merge(vector<vector<int>>& intervals) {
     }
  
     return res;
-}
+} 
 
 // Efficient solution
 vector<vector<int>> mergeEfficientSolution(vector<vector<int>>& intervals) {
