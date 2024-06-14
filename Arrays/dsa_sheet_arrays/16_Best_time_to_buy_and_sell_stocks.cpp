@@ -13,7 +13,7 @@ int maxProfit(vector<int>& prices) {
         else{
             ans = max(ans, prices[i]-minimum);
         }
-    }
+    } 
 
     return ans;
 }
