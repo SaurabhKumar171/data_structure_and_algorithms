@@ -28,4 +28,4 @@ int findLongestConseqSubseq(int nums[], int N)
     }
 
     return ans;
-}
+}  
