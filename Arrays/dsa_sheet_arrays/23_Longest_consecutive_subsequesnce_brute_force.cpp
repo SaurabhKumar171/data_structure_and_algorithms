@@ -26,6 +26,6 @@ int findLongestConseqSubseq(int nums[], int N)
         ans = max(ans, count);
         count = 0;
     }
-
+  
     return ans;
 }  
