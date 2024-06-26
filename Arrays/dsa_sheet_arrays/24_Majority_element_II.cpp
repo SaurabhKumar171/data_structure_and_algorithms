@@ -22,7 +22,7 @@ vector<int> majorityElement(vector<int>& nums) {
         if(it->second > n/3)
             res.push_back(it->first);
     }
-
+  
     return res;
 }
 
