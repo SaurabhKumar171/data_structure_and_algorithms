@@ -3,7 +3,7 @@
 #include <limits.h>
 #include <vector>
 using namespace std;
-
+  
 int trap(vector<int> &height) {
   int n = height.size();
 
