@@ -4,8 +4,35 @@
 #include <vector>
 using namespace std;
 
-//Better approach
-int trap(vector<int> &height) {
+// Brute force
+int trap1(vector<int> &height) {
+  int n = height.size();
+
+  int ans = 0;
+
+  for (int i = 0; i < n; i++) {
+    int j = i;
+    int lmax = INT_MIN;
+    while (j >= 0) {
+      lmax = max(lmax, height[j]);
+      j--;
+    }
+
+    j = i;
+    int rmax = INT_MIN;
+    while (j < n) {
+      rmax = max(rmax, height[j]);
+      j++;
+    }
+
+    ans += min(lmax, rmax) - height[i];
+  }
+
+  return ans;
+}
+
+// Better approach
+int trap2(vector<int> &height) {
   int n = height.size();
 
   if (n == 0)
@@ -41,36 +68,33 @@ int trap(vector<int> &height) {
   return ans;
 }
 
-//Optimal Solution
-int trap2(vector<int>& height) {
-    int n = height.size();
+// Optimal Solution
+int trap3(vector<int> &height) {
+  int n = height.size();
 
-    int l = 0;
-    int r = n-1;
-    int lmax = 0;
-    int rmax = 0;
-    int ans = 0;
+  int l = 0;
+  int r = n - 1;
+  int lmax = 0;
+  int rmax = 0;
+  int ans = 0;
 
-    while(l <= r){
-        if(height[l] <= height[r]){
-            if(lmax < height[l]){
-                lmax = height[l];
-            }
-            else{
-                ans += lmax-height[l];
-            }
-            l++;
-        }
-        else{
-            if(rmax < height[r]){
-                rmax = height[r];
-            }
-            else{
-                ans += rmax-height[r];
-            }
-            r--;
-        }
+  while (l <= r) {
+    if (height[l] <= height[r]) {
+      if (lmax < height[l]) {
+        lmax = height[l];
+      } else {
+        ans += lmax - height[l];
+      }
+      l++;
+    } else {
+      if (rmax < height[r]) {
+        rmax = height[r];
+      } else {
+        ans += rmax - height[r];
+      }
+      r--;
     }
+  }
 
-    return ans;
+  return ans;
 }
