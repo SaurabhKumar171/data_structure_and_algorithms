@@ -48,7 +48,6 @@ int trap2(vector<int> &height) {
     leftMax[i] = maximum;
   }
 
-
   maximum = 0;
   for (int i = n - 1; i >= 0; i--) {
     maximum = max(maximum, height[i]);
