@@ -1,19 +1,20 @@
+#include <algorithm>
 #include <iostream>
 #include <vector>
 using namespace std;
 
-int median(vector<vector<int>> &matrix, int R, int C){
-    // code here  
+// Brute force approach
+int median(vector<vector<int>> &matrix, int R, int C) {
 
-    vector<int> res;
+  vector<int> res;
 
-    for(int i = 0; i < R; i++){
-        for(int j = 0; j < C; j++){
-            res.push_back(matrix[i][j]);
-        }
+  for (int i = 0; i < R; i++) {
+    for (int j = 0; j < C; j++) {
+      res.push_back(matrix[i][j]);
     }
+  }
 
-    sort(res.begin(), res.end());
+  sort(res.begin(), res.end());
 
-    return res[(R*C)/2];
+  return res[(R * C) / 2];
 }
