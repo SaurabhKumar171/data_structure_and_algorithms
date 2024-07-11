@@ -2,7 +2,7 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-
+  
 vector<vector<int>> sortedMatrix(int N, vector<vector<int>> Mat) {
     // code here
     vector<int> store;
