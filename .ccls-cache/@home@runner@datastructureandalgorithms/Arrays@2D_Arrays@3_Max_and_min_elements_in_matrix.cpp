@@ -1,7 +1,7 @@
 #include <iostream>
 #include <limits.h>
 using namespace std;
-
+  
 int min(int arr[][3],int n ,int m,int target){
   int min = INT_MAX;
 
