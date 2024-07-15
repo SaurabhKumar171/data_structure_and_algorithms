@@ -26,4 +26,4 @@ void commonElements(vector<vector<int>> arr, int n, int m){
         }
     }
     cout << endl;
-}
+}    
