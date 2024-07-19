@@ -2,7 +2,7 @@
 #include <vector>
 #include <unordered_map>
 using namespace std;
-      
+         
 void commonElements(vector<vector<int>> arr, int n, int m){
   unordered_map<int, int> map;   
 
