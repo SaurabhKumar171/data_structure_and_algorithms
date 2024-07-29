@@ -1,6 +1,6 @@
-#include <iostream>;
+#include <iostream>
 using namespace std;
-#include <vector>;
+#include <vector>
 
 int binarySearch(vector<int> &arr, int target) {
   int i = 0;
