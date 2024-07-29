@@ -1,17 +1,17 @@
 #include <iostream>
 using namespace std;
+#include <vector>;
 
-int binarySearch(int arr[], int n, int target) {
-
+int binarySearch(vector<int> &arr, int target) {
   int i = 0;
-  int j = n - 1;
+  int j = arr.size() - 1;
 
   while (i <= j) {
     int m = i + (j - i) / 2;
 
-    if (arr[i] == target) {
-      return i;
-    } else if (arr[i] > target) {
+    if (arr[m] == target) {
+      return m;
+    } else if (arr[m] > target) {
       j = m - 1;
     } else {
       i = m + 1;
