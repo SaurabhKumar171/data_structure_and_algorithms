@@ -11,10 +11,10 @@ int searchInNearlySortedArray(int arr[], int n, int target){
       if(arr[m] == target){
           return m;
       }
-      else if(arr[m+1] == target){
+      else if(m + 1 < n && arr[m+1] == target){
           return m+1;
       }
-      else if(arr[m-1] == target){
+      else if(m-1 >= 0 && arr[m-1] == target){
           return m-1;
       }
       else if(arr[m] < target){
