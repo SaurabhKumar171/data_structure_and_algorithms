@@ -3,7 +3,8 @@
 #include <vector>
 using namespace std;
 
-int findPairs(vector<int> &nums, int k) {
+// Binary search Approach
+int findPairs2(vector<int> &nums, int k) {
 
   int n = nums.size();
   int count = 0;
@@ -25,4 +26,34 @@ int findPairs(vector<int> &nums, int k) {
   }
 
   return count;
+}
+
+// Two pointer Approach
+int findPairs1(vector<int> &nums, int k) {
+
+  int n = nums.size();
+
+  set<pair<int, int>> ans;
+
+  sort(nums.begin(), nums.end());
+
+  int i = 0;
+  int j = 1;
+
+  while (j < n) {
+
+    int diff = nums[j] - nums[i];
+
+    if (i != j && diff == k) {
+      ans.insert({nums[i], nums[j]});
+      j++;
+      i++;
+    } else if (diff > k) {
+      i++;
+    } else {
+      j++;
+    }
+  }
+
+  return ans.size();
 }
