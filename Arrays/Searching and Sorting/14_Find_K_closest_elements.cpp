@@ -24,7 +24,7 @@ int lowerBound(vector<int> &a, int x) {
 }
 
 // Binary search + Two Pointer Approach [ Time complexity : O(logn+k) , Space
-// complexity : O(k) ]
+// complexity : O(k) ]    
 vector<int> bs_method(vector<int> &arr, int k, int x) {
 
   int h = lowerBound(arr, x);
