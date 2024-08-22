@@ -29,3 +29,24 @@ bool rotateStringBruteForce(string s, string goal) {
 
   return false;
 }
+
+// Optimal Approach
+bool rotateStringOptimalApproach(string s, string goal) {
+
+  int sizeOfs = s.size();
+  int sizeOfGoal = goal.size();
+
+  if (sizeOfs != sizeOfGoal) {
+    return false;
+  }
+
+  for (int i = 0; i < sizeOfs; i++) {
+    string rotated = s.substr(i) + s.substr(0, i);
+
+    if (rotated == goal) {
+      return true;
+    }
+  }
+
+  return false;
+}
