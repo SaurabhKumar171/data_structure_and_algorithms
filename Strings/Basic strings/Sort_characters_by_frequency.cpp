@@ -1,6 +1,6 @@
 #include <algorithm>
 #include <iostream>
-#include <vector>
+#include <vector>.
 using namespace std;
 
 bool comparator(char a, char b, const vector<int> &freq) {
