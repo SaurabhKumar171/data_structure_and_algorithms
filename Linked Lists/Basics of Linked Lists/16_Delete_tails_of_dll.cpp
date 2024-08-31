@@ -41,11 +41,12 @@ public:
         ListNode* temp = head;
 
         while(temp->next->next != NULL){
-            temp = temp->next;
+            temp = temp->next;    
+            
         }
 
         temp->next = nullptr;
 
         return head;    
     }
-};
+};     
