@@ -11,7 +11,7 @@ class Node{
   public:
     Node(int data1, Node* next1, Node* back1){
       data = data1;
-      next = next1;
+      next = next1;    
       back = back1;
     }
 
@@ -56,4 +56,4 @@ int main() {
   printDll(head);
 
   return 0;
-}
+}     
