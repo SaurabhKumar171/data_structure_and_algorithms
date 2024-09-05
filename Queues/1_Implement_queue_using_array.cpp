@@ -29,7 +29,7 @@ public:
             cout << "Stack is empty"<< endl;
             // return invalid value
             return -1;
-        }    
+        }  
 
         return st[topIndex--];
     }
