@@ -32,7 +32,7 @@ public:
         }  
 
         return st[topIndex--];
-    }
+    }   
     
     int top() {
         if(isEmpty()){
