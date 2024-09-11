@@ -11,7 +11,7 @@ int sum(int first, int sec, int num, int n){
     if(n == 0){
         return 0;
     }
-    else if(num == n){
+    else if(num == n){   
         return sec;
     }
     return sum(sec, first + sec , num + 1, n);
