@@ -43,7 +43,7 @@ public:
             // Sort the right subarray
             quickSortHelper(arr, pIndex + 1, high);
         }
-    }
+    }    
     
     // Function to perform quick sort on given array
     vector<int> quickSort(vector<int>& nums) {
