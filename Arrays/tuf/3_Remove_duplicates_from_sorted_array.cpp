@@ -2,7 +2,7 @@
 class Solution1 {
 public:
     int removeDuplicatesBruteForce(vector<int>& nums) {
-        
+           
         set<int> s;
 
         for(int i : nums){
