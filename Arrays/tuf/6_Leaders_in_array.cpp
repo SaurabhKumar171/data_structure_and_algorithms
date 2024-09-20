@@ -1,3 +1,6 @@
+#include<iostream>
+using namespace std;
+#include<vector>
 class Solution {
 public:
     vector<int> leaders(vector<int>& nums) {
@@ -15,7 +18,7 @@ public:
             result.push_back(nums[i]);
             currentLeader = nums[i];
           }
-      }
+      }   
 
       reverse(result.begin(), result.end());
 
