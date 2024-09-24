@@ -4,7 +4,7 @@
 using namespace std;
 
 // Brute force Approach
-class Solution {
+class Solution1 {
 public:
     vector<int> rearrangeArrayBruteForceApproach(vector<int>& nums) {
         
@@ -26,5 +26,34 @@ public:
         }
 
         return nums;
+    }
+};
+
+
+//Optimal Approach
+class Solution2 {
+public:
+    vector<int> rearrangeArray(vector<int>& nums) {
+        
+       int pIndex = 0;
+       int nIndex = 1;
+
+       vector<int> ans(nums.size(), 0);
+
+      for(int i = 0; i < nums.size(); i++){
+
+        if(nums[i] > 0){
+            ans[pIndex] = nums[i];
+
+            pIndex +=2;
+        }
+        else{
+            ans[nIndex] = nums[i];
+
+            nIndex +=2;   
+        }
+      }
+
+       return ans;
     }
 };
