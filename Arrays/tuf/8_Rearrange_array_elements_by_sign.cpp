@@ -33,7 +33,7 @@ public:
 //Optimal Approach
 class Solution2 {
 public:
-    vector<int> rearrangeArray(vector<int>& nums) {
+    vector<int> rearrangeArrayOptimalApproach(vector<int>& nums) {
         
        int pIndex = 0;
        int nIndex = 1;
