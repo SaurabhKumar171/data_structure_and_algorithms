@@ -29,7 +29,7 @@ public:
     }
 };
 
-
+  
 //Optimal Approach
 class Solution2 {
 public:
