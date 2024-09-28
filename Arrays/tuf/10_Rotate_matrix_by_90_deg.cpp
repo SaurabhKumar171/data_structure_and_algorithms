@@ -18,9 +18,6 @@ public:
 
             for(int j = i; j < matrix[i].size(); j++){
                 swap(matrix[i][j], matrix[j][i]);
-                // int t =  matrix[i][j];
-                // matrix[i][j] = matrix[j][i];
-                // matrix[j][i] = t;
             }
         }
     }
