@@ -63,3 +63,36 @@ public:
         return (int)res;
     }
 };
+
+
+
+// Variety 2 : (To Print a row in a triangle using above formula)
+class Solution3 {
+public:
+    int nCr(int n, int r){
+        long long res = 1;
+        for(int i = 0; i < r; i++){
+            res = res*(n-i);
+            res = res/(i+1);
+        }
+        return (int)res;
+    }
+
+    void pascalTriangle(int printRow) {
+        
+        // vector<vector<int>> ans(numRows)
+        for(int j = 0; j < printRow; j++){
+                cout << nCr(printRow - 1, j) << " ";
+        }
+
+        cout << endl;
+    }
+
+    int main() {
+        pascalTriangle(1);
+        pascalTriangle(2);
+        pascalTriangle(3);
+        pascalTriangle(4);
+        return 0;
+    }
+};
