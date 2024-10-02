@@ -4,7 +4,8 @@
 #include<set>
 using namespace std;
 
-class Solution {
+// Brute force Approach
+class Solution1 {
 public:
     vector<vector<int>> fourSum(vector<int>& nums, int target) {
         
