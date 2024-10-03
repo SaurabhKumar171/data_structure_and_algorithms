@@ -40,9 +40,49 @@ public:
     }
 };
 
+// Better Approach
+class Solution2 {
+public:
+    vector<vector<int>> fourSum(vector<int>& nums, int target) {
+
+        int n = nums.size();
+
+        set<vector<int>> tripletSet;
+
+        for(int i = 0; i < n - 2; i++){
+
+            for(int j = i + 1; j < n - 1; j++){
+                
+                set<int> hs;
+
+                for(int k = j+1; k < n; k++){
+
+                    long long sum = nums[i] + nums[j];
+                    sum += nums[k];
+                    long long ele = target - sum;
+
+                    if(hs.find(ele) != hs.end()){
+
+                        vector<int> temp = {nums[i], nums[j], nums[k], static_cast<int>(ele)};
+                        sort(temp.begin(), temp.end());
+
+                        tripletSet.insert(temp);
+                    }
+
+                    hs.insert(nums[k]);
+                }
+            }
+        }
+
+        vector<vector<int>> ans(tripletSet.begin(), tripletSet.end());
+
+        return ans;
+    }
+};
+
 
 // Optimal Approach
-class Solution {
+class Solution3 {
 public:
     vector<vector<int>> fourSum(vector<int>& nums, int target) {
         
