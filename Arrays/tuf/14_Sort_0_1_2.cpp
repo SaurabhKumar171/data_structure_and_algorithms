@@ -5,7 +5,7 @@
 using namespace std;
 
 // Better Approach
-class Solution {
+class Solution1 {
 public:
     void sortZeroOneTwo(vector<int>& a) {
         
@@ -30,6 +30,31 @@ public:
         while(twoCnt > 0){
             a[k++] = 2;
             twoCnt--;
+        }
+    }
+};
+
+
+// Optimal Approach
+class Solution2 {
+public:
+    void sortZeroOneTwo(vector<int>& a) {
+        
+        int n = a.size();
+        int l = 0, m = 0, h = n - 1;
+
+        while(m <= h){
+            if(a[m] == 0){
+                swap(a[l], a[m]);
+                l++, m++;
+            }
+            else if(a[m] == 2){
+                swap(a[m], a[h]);
+                h--;
+            }
+            else{
+                m++;
+            }
         }
     }
 };
