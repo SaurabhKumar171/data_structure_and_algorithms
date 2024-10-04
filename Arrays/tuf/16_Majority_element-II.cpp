@@ -3,7 +3,7 @@
 #include<algorithm>
 #include<set>
 using namespace std;
-
+  
 // Brute force Approach
 class Solution1 {
 public:
