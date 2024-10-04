@@ -40,3 +40,35 @@ public:
         return ans;
     }
 };
+
+
+// Better Approach
+class Solution2 {
+public:
+    vector<int> majorityElementTwo(vector<int>& nums) {
+        
+        int n = nums.size();
+
+        int k = n/3;
+
+        vector<int> ans;
+
+        unordered_map<int, int> m;
+
+        for(int i = 0; i < n; i++){
+            m[nums[i]]++;
+        }
+
+        for(auto i : m){
+            if(i.second > k){
+                ans.push_back(i.first);
+            }
+
+            if(ans.size() == 2){
+                break;
+            }
+        }
+
+        return ans;
+    }
+};
