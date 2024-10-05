@@ -102,9 +102,9 @@ public:
         long long val1 = s - sn;
         long long val2 = (s2 - s2n)/val1;
 
-        long long x = (val2 + val1)/2;
-        long long y = val2 - x;
+        long long repeating = (val2 + val1)/2;
+        long long missing = val2 - repeating;
  
-        return {(int)x , (int)y};
+        return {(int)repeating , (int)missing};
     }
 };
