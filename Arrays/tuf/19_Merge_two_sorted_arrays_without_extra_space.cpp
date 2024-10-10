@@ -47,3 +47,40 @@ public:
         }
     }
 };
+
+// Optimal approach (without extra space )
+class Solution {
+public:
+    void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
+        
+        int i = m-1;
+        int j = 0;
+
+        while(i >= 0 && j < n){
+
+            if(nums1[i] > nums2[j]){
+                swap(nums1[i], nums2[j]);
+                
+                int k = i;
+                while(k > 0 && nums1[k] < nums1[k-1]){
+                    swap(nums1[k], nums1[k-1]);
+                    k--;
+                }
+
+                int p = j;
+                while(p < n-1 && nums2[p] > nums2[p+1]){
+                    swap(nums2[p], nums2[p+1]);
+                    p++;
+                }
+            }
+            else{
+                i--;
+                j++;
+            }
+        }
+
+        for(int i = m; i < m+n; i++){
+            nums1[i] = nums2[i - m];
+        }
+    }
+};
