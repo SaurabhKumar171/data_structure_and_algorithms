@@ -116,3 +116,35 @@ public:
 
     }
 };
+
+// Optimal Approach - II
+class Solution {
+public:
+    void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
+
+        for(int i = m; i< m+n; i++){
+            nums1[i] = nums2[i-m];
+        }
+
+        double g = (double(m)+n)/2;
+        int gap = int(ceil(g));
+
+        while(gap >= 1){
+            
+            int i = 0;
+            int j = i + gap;
+
+            while(j < m+n){
+                
+                if(nums1[i] > nums1[j]){
+                    swap(nums1[i], nums1[j]);
+                }
+                i++,j++;
+            }
+
+            if(gap == 1) break;
+
+            gap = int(ceil((double)(gap)/2));
+        }
+    }
+};
