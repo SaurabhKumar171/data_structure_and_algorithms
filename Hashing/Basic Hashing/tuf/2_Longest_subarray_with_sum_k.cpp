@@ -34,3 +34,40 @@ public:
         return longestSubarray;
     }
 };
+
+
+// Optimal Approach
+class Solution{
+public:
+    int longestSubarray(vector<int> &nums, int k){
+        
+        int n = nums.size();
+        int longestSubarray = 0;
+
+
+        map<int, int> mp;
+        int sum = 0;
+
+        for(int i = 0; i < n; i++){
+
+            sum += nums[i];
+
+            if(sum == k){
+                longestSubarray = max(longestSubarray, i + 1);
+            }
+
+            int target = sum - k;
+
+            if(mp.find(target) != mp.end()){
+                int len = i - mp[target];
+                longestSubarray = max(longestSubarray, i - mp[target]);
+            }
+
+            if(mp.find(sum) == mp.end()){
+                mp[sum] = i;
+            }
+        }
+
+        return longestSubarray;
+    }
+};
