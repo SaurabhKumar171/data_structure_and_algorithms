@@ -22,7 +22,7 @@ public:
 
                 if(sum == k){
                     subarrayCnt++;
-                }
+                }   
             }
         }
 
