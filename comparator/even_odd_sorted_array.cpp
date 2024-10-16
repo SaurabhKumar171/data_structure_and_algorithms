@@ -6,6 +6,7 @@
 using namespace std;
 
 bool customEvenOddComparator(int a , int b){
+    // if one is odd and another is even
     if((a%2 == 0 && b%2 == 0) || (a%2 != 0 && b%2 != 0)){ 
         return a < b;
     }
@@ -27,3 +28,7 @@ int main() {
 
     return 0;
 }
+
+
+
+NOTE : if comparator returns true then first no. will come first else second no.
