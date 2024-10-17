@@ -31,4 +31,4 @@ int main() {
 
 
 
-NOTE : if comparator returns true then first no. will come first else second no.
+// NOTE : if comparator returns true then first no. will come first else second no.
