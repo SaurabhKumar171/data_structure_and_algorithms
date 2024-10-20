@@ -29,7 +29,7 @@ bool customComparator(const Complex& s1 , const Complex& s2){
     }
 
     return magnitude1 < magnitude2;
-}    
+}       
 
 int main() {
     vector<Complex> complexs = {
