@@ -29,3 +29,32 @@ public:
         return cnt;
     }
 };
+
+
+// Optimal Approach
+class Solution {
+public:
+    int subarraySum(vector<int>& nums, int k) {
+        
+        int n = nums.size();
+        unordered_map<int, int> map;
+        map[0] = 1;
+
+        int cnt = 0;
+        int sum = 0;
+
+        for(int i = 0; i < n; i++){
+
+            sum += nums[i];
+            int diff = sum - k;
+
+            if(map.find(diff) != map.end()){
+                cnt += map[diff];
+            }
+            
+            map[sum]++;
+        }
+
+        return cnt;
+    }
+};
