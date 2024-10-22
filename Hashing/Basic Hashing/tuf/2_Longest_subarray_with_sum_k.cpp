@@ -37,15 +37,15 @@ public:
 
 
 // Optimal Approach
-class Solution{
+class Solution2{
 public:
     int longestSubarray(vector<int> &nums, int k){
         
         int n = nums.size();
-        int longestSubarray = 0;
+        int maxLength = 0;
 
+        unordered_map<int, int> map;
 
-        map<int, int> mp;
         int sum = 0;
 
         for(int i = 0; i < n; i++){
@@ -53,21 +53,20 @@ public:
             sum += nums[i];
 
             if(sum == k){
-                longestSubarray = max(longestSubarray, i + 1);
+                maxLength = max(maxLength, i+1);
             }
 
-            int target = sum - k;
+            int diff = sum - k;
 
-            if(mp.find(target) != mp.end()){
-                int len = i - mp[target];
-                longestSubarray = max(longestSubarray, i - mp[target]);
+            if(map.find(diff) != map.end()){
+                maxLength = max(maxLength, i - map[diff]);
             }
 
-            if(mp.find(sum) == mp.end()){
-                mp[sum] = i;
+            if(map.find(sum) == map.end()){
+                map[sum] = i;
             }
         }
 
-        return longestSubarray;
+        return maxLength;
     }
 };
