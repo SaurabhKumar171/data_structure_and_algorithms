@@ -5,7 +5,7 @@
 using namespace std;
 
 class Solution { 
-public:
+public: 
     int searchInsert(vector<int> &nums, int target)  {
 
      int low = 0;
