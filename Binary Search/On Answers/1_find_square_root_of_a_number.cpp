@@ -11,26 +11,22 @@ public:
       if(n == 0) return 0;
       
       long long l = 1;
-      long long h = n/2;
+      long long h = n;
       long long sqrt = 1;
 
       while(l <= h){
 
         long long m = l + (h-l)/2;
 
-        if(m*m == n){
-            return m;
-        }
-        else if(m*m > n){
+        if(m*m > n){
             h = m - 1;
         }
-        else if(m*m < n){
-            sqrt = m;
+        else if(m*m <= n){
             l = m+1;
         }
 
       }
 
-      return sqrt;
+      return h;
     }
 };
