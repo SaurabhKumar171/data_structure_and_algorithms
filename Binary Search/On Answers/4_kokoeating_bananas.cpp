@@ -44,7 +44,7 @@ int minimumRateToEatBananas(vector<int> nums, int h) {
         return maxi;
     }
 };
-
+   
 
 
 // Binary search
