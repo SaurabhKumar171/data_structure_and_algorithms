@@ -28,7 +28,7 @@ public:
       return -1;    
     }
 };
-
+ 
 
 // Brute force ( Linear search )
 #include<iostream>
