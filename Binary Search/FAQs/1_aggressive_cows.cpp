@@ -42,6 +42,7 @@ public:
     }
 };
 
+
 // Optimal Approach ( Binary search )
 class Solution {
 private:
