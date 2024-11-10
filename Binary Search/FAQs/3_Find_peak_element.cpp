@@ -1,4 +1,10 @@
-// Optimal force ( Binary search )
+#include<iostream>
+#include<vector>
+#include<algorithm>
+#include<set>
+using namespace std;
+
+// Optimal Aproach ( Binary search )
 class Solution {
 public:
     int findPeakElement(vector<int>& arr) {
@@ -31,12 +37,6 @@ public:
  
 
 // Brute force ( Linear search )
-#include<iostream>
-#include<vector>
-#include<algorithm>
-#include<set>
-using namespace std;
-
 class Solution1 {
 public:
     int findPeakElement(vector<int> &arr) {
