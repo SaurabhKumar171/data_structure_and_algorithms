@@ -4,6 +4,25 @@
 #include<set>
 using namespace std;
 
+// Optimal approach [O(m+n)]
+class Solution{
+public:
+ bool searchMatrix(vector<vector<int>> &mat, int target){
+
+        int r = 0;
+        int c = mat[0].size()-1;
+
+        while(r < mat.size() && c >= 0){
+
+            if(target == mat[r][c]) return true;
+            else if(target > mat[r][c]) r++;
+            else c--;
+        }
+
+        return false;   
+    }
+};
+
 // Better approach [O( m * log(n) )]
 class Solution{
 public:
