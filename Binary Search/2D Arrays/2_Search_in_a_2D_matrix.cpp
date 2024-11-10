@@ -30,7 +30,7 @@ public:
 };
 
 
-// Better approach [O( n * log(n) )]
+// Better approach [O( m * log(n) )]
 class Solution{
 private:
     bool binarySearch(vector<int> a, int x){
