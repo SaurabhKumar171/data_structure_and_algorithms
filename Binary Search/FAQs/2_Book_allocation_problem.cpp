@@ -1,3 +1,10 @@
+#include<iostream>
+#include<vector>
+#include<algorithm>
+#include<set>
+#include <numeric>
+using namespace std;
+
 // Optimal Approach ( Binary search )
 class Solution {
 private:
@@ -50,13 +57,6 @@ public:
 
 
 // Brute force ( Linear search )
-#include<iostream>
-#include<vector>
-#include<algorithm>
-#include<set>
-#include <numeric>
-using namespace std;
-
 class Solution {
 private:
     int allocStudents(vector<int> &nums, int currMaxPages){
