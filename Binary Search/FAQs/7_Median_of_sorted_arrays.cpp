@@ -4,7 +4,7 @@
 #include<numeric>
 using namespace std;
 
-class Solution {
+class Solution { 
 public:
     double median(vector<int> &arr1, vector<int> &arr2) {
      
