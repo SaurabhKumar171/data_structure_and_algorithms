@@ -5,7 +5,7 @@
 #include <numeric>
 using namespace std;
 
-class Solution {
+class Solution { 
 private:
     void createPairs(int open, int close, string str, vector<string>& ans, int n){
 
