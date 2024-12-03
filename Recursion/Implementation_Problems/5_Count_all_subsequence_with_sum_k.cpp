@@ -16,7 +16,7 @@ class Solution{
             }
             if (index >= nums.size() || k < 0) {
                 return 0;
-            }
+            } 
 
             cnt += createSubset(index + 1, k - nums[index], nums);
 
