@@ -5,6 +5,7 @@
 #include <numeric>
 using namespace std;
 
+// Brute force Approcah (using set) : T.C - O(2^n), S.C - O(n)
 class Solution
 {
 private:
@@ -42,6 +43,51 @@ public:
         {
             ans.push_back(i);
         }
+
+        return ans;
+    }
+};
+
+// Optimal Approcah (using recursion) : T.C - O(2^n * n), S.C - O(n)
+class Solution
+{
+private:
+    void getSubsets(int index, vector<vector<int>> &ans, vector<int> &nums, vector<int> &list)
+    {
+
+        if (index == nums.size())
+        {
+            ans.push_back(list);
+            return;
+        }
+
+        list.push_back(nums[index]);
+        getSubsets(index + 1, ans, nums, list);
+
+        list.pop_back();
+
+        for (int j = index + 1; j < nums.size(); j++)
+        {
+            if (nums[j] != nums[index])
+            {
+                getSubsets(j, ans, nums, list);
+                return;
+            }
+        }
+
+        getSubsets(nums.size(), ans, nums, list);
+    }
+
+public:
+    vector<vector<int>> subsetsWithDup(vector<int> &nums)
+    {
+
+        vector<vector<int>> ans;
+        vector<int> list;
+
+        sort(nums.begin(), nums.end());
+
+        getSubsets(0, ans, nums, list);
 
         return ans;
     }
