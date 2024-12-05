@@ -48,7 +48,7 @@ public:
     }
 };
 
-// Optimal Approcah (using recursion) : T.C - O(2^n * n), S.C - O(n)
+// Optimal Approcah (Without using any extra space) : T.C - O(2^n * n), S.C - O(n)
 class Solution
 {
 private:
