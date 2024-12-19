@@ -6,7 +6,7 @@
 #include <numeric>
 using namespace std;
 
-class Solution
+class Solution1
 {
 private:
     void place(int r, int c, vector<vector<int>> &grid, string str, vector<string> &ans, int n)
