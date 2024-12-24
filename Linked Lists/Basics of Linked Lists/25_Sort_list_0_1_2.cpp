@@ -102,3 +102,55 @@ public:
         return head;
     }
 };
+
+// Optimal solution
+class Solution
+{
+public:
+    ListNode *sortList(ListNode *head)
+    {
+
+        ListNode *zeroHead = new ListNode(-1);
+        ListNode *oneHead = new ListNode(-1);
+        ListNode *twoHead = new ListNode(-1);
+
+        ListNode *zero = zeroHead;
+        ListNode *one = oneHead;
+        ListNode *two = twoHead;
+        ListNode *curr = head;
+
+        while (curr != NULL)
+        {
+            if (curr->val == 0)
+            {
+                zero->next = curr;
+                zero = curr;
+            }
+            else if (curr->val == 1)
+            {
+                one->next = curr;
+                one = curr;
+            }
+            else if (curr->val == 2)
+            {
+                two->next = curr;
+                two = curr;
+            }
+
+            curr = curr->next;
+        }
+
+        zero->next = (oneHead->next) ? oneHead->next : twoHead->next;
+        one->next = twoHead->next;
+        two->next = NULL;
+
+        ListNode *newHead = zeroHead->next;
+
+        // Delete dummy nodes
+        delete zeroHead;
+        delete oneHead;
+        delete twoHead;
+
+        return newHead;
+    }
+};
