@@ -24,41 +24,46 @@ public:
     }
 };
 
+// optimal (iterative) solution
 class Solution
 {
 public:
     ListNode *reverseList(ListNode *head)
     {
-        ListNode *temp = head;
+        if (head == NULL || head->next == NULL)
+            return head;
 
-        /*Initialize pointer 'prev' to NULL,
-        representing the previous node*/
-        ListNode *prev = NULL;
+        ListNode *prev = nullptr;
+        ListNode *curr = head;
 
-        /*Traverse the list, continue till
-        'temp' reaches the end (NULL)*/
-        while (temp != NULL)
+        while (curr != nullptr)
         {
-            /* Store the next node in
-             'front' to preserve the reference*/
-            ListNode *front = temp->next;
-
-            /*Reverse the direction of the
-            current node's 'next' pointer
-            to point to 'prev'*/
-            temp->next = prev;
-
-            /*Move 'prev' to the current
-            node for the next iteration*/
-            prev = temp;
-
-            /*Move 'temp' to the 'front' node
-            advancing the traversal*/
-            temp = front;
+            ListNode *nextNode = curr->next;
+            curr->next = prev;
+            prev = curr;
+            curr = nextNode;
         }
 
-        /*Return the new head of
-        the reversed linked list*/
         return prev;
+    }
+};
+
+// optimal (recursive) solution
+class Solution
+{
+public:
+    ListNode *reverseList(ListNode *head)
+    {
+
+        if (head == NULL || head->next == NULL)
+            return head;
+
+        ListNode *newHead = reverseList(head->next);
+
+        ListNode *front = head->next;
+        front->next = head;
+        head->next = nullptr;
+
+        return newHead;
     }
 };
