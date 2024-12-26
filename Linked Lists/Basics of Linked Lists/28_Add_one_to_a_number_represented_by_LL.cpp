@@ -1,5 +1,5 @@
 
-// Brute force [T.C - 0(n), S.C - 0(n)]
+// Brute force [T.C - 0(n), S.C - 0(1)]
 class Solution
 {
 private:
@@ -54,5 +54,44 @@ public:
         newHead = reverseLL(dummyNode);
 
         return newHead;
+    }
+};
+
+// Optimal solution [T.C - 0(n), S.C - 0(n) : due to recursion call stack]
+class Solution
+{
+private:
+    int helper(Node *temp)
+    {
+        if (temp == nullptr)
+            return 1;
+
+        int carry = helper(temp->next);
+
+        temp->data = temp->data + carry;
+
+        if (temp->data < 10)
+        {
+            return 0;
+        }
+
+        temp->data = temp->data % 10;
+
+        return 1;
+    }
+
+public:
+    Node *addOne(Node *head)
+    {
+        int carry = helper(head);
+
+        if (carry == 1)
+        {
+            Node *newNode = new Node(carry);
+            newNode->next = head;
+            return newNode;
+        }
+
+        return head;
     }
 };
