@@ -1,4 +1,29 @@
 
+// Brute force
+class Solution
+{
+public:
+    ListNode *reverseList(ListNode *head)
+    {
+
+        if (head == NULL || head->next == NULL)
+            return head;
+
+        ListNode *curr = head;
+        ListNode *temp = nullptr;
+
+        while (curr != nullptr)
+        {
+            ListNode *newNode = new ListNode(curr->val);
+            newNode->next = temp;
+            temp = newNode;
+            curr = curr->next;
+        }
+
+        return temp;
+    }
+};
+
 class Solution
 {
 public:
