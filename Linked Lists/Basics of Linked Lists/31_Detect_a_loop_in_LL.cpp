@@ -26,7 +26,7 @@ public:
     }
 }
 
-// Optimal soln([T.C - O(N), S.C - O(1)])  - Tortoise ans hare soln
+// Optimal soln([T.C - O(N), S.C - O(1)]) - Tortoise ans hare soln
 class Solution
 {
 public:
