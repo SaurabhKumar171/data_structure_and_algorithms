@@ -42,3 +42,27 @@ public:
         return head;
     }
 }
+
+// Optimal soln (T.C - O(n/2), S.C - O(1))
+class Solution
+{
+public:
+    ListNode *deleteMiddle(ListNode *head)
+    {
+
+        if (head == nullptr || head->next == nullptr)
+            return nullptr;
+
+        ListNode *slow = head;
+        ListNode *fast = head->next;
+
+        while (fast != nullptr && fast->next != nullptr && fast->next->next != nullptr)
+        {
+            slow = slow->next;
+            fast = fast->next->next;
+        }
+
+        slow->next = slow->next->next;
+        return head;
+    }
+};
