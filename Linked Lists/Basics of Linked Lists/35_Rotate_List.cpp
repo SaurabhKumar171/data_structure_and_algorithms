@@ -49,7 +49,7 @@ public:
     }
 };
 
-// Optimal approach
+// Optimal approach (T.C - { O(n)+O(n - (n%k) + O(n) } - > O(n), S.C - O(1))
 class Solution
 {
 private:
