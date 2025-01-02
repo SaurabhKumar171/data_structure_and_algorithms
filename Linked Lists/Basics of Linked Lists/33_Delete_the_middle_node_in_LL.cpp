@@ -1,9 +1,12 @@
 
-#include <iostream>
-#include <unordered_map>
-#include <vector>
-using namespace std;
-
+struct ListNode
+{
+    int val;
+    ListNode *next;
+    ListNode() : val(0), next(nullptr) {}
+    ListNode(int x) : val(x), next(nullptr) {}
+    ListNode(int x, ListNode *next) : val(x), next(next) {}
+};
 // Brute force (T.C - O(n + n/2), S.C - O(1))
 
 class Solution
