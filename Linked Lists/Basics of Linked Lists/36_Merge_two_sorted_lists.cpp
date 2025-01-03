@@ -62,3 +62,47 @@ public:
         return resultantList;
     }
 };
+
+// Optimal Soln (T.C - { O(n + n)}, S.C - O(1))
+class Solution
+{
+public:
+    ListNode *mergeTwoLists(ListNode *list1, ListNode *list2)
+    {
+
+        ListNode *dummyNode = new ListNode(-1);
+        ListNode *curr = dummyNode;
+
+        while (list1 != nullptr && list2 != nullptr)
+        {
+            if (list1->val >= list2->val)
+            {
+                curr->next = list2;
+                list2 = list2->next;
+            }
+            else
+            {
+                curr->next = list1;
+                list1 = list1->next;
+            }
+
+            curr = curr->next;
+        }
+
+        while (list1 != nullptr)
+        {
+            curr->next = list1;
+            list1 = list1->next;
+            curr = curr->next;
+        }
+
+        while (list2 != nullptr)
+        {
+            curr->next = list2;
+            list2 = list2->next;
+            curr = curr->next;
+        }
+
+        return dummyNode->next;
+    }
+};
