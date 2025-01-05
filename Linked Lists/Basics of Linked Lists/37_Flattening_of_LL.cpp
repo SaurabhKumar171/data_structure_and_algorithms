@@ -1,7 +1,6 @@
 
 // Brute force (T.C - {O(N*M) + O(N*M(log(N*M))) + O(N*M)}}, S.C -{O(N*M) + O(N*M)})
 class Solution
-
 {
 public:
     ListNode *flattenLinkedList(ListNode *&head)
