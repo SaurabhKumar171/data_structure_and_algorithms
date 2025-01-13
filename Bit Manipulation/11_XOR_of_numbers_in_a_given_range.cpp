@@ -1,4 +1,5 @@
 class Solution
+
 {
 private:
     int XORtillN(int n)
