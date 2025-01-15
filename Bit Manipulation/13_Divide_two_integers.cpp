@@ -26,3 +26,50 @@ public:
         return isPositive ? ans : -ans;
     }
 };
+
+// Optimal solution (T.C - { O(logn)*O(logn)}, S.C - O(1))
+class Solution
+{
+public:
+    int divide(int dividend, int divisor)
+    {
+
+        if (dividend == divisor)
+            return 1;
+
+        bool isPositive = true;
+
+        if (dividend < 0 && divisor > 0)
+            isPositive = false;
+        if (dividend > 0 && divisor < 0)
+            isPositive = false;
+
+        long numerator = labs(dividend);
+        long denominator = labs(divisor);
+
+        long ans = 0;
+
+        while (numerator >= denominator)
+        {
+
+            long cnt = 0;
+            while (numerator > (denominator << (cnt + 1)))
+            {
+                cnt++;
+            }
+
+            ans += (pow(2, cnt));
+            numerator -= (denominator << cnt);
+        }
+
+        if (!isPositive)
+            ans *= -1;
+
+        if (ans > INT_MAX)
+            return INT_MAX;
+        if (ans < INT_MIN)
+            return INT_MIN;
+
+        return ans;
+    }
+};
