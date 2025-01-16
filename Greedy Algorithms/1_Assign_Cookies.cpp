@@ -1,3 +1,7 @@
+#include <stdio.h>
+#include <vector>
+using namespace std;
+
 // (T.C - {O(N*log(N) + M*log(M) + O(M)}, S.C - O(1))
 class Solution
 {
