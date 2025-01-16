@@ -1,4 +1,5 @@
-(T.C - {O(2 ^ n) * O(n)}, S.C - O(1)) class Solution
+// (T.C - {O(2 ^ n) * O(n)}, S.C - O(1))
+class Solution
 {
 public:
     vector<vector<int>> powerSet(vector<int> &nums)
