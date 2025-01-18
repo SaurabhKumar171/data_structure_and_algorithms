@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <vector>
 using namespace std;
+
+// (T.C - {O(N}, S.C - O(1))
 class Solution
 {
 public:
