@@ -2,8 +2,7 @@
 #include <unordered_map>
 using namespace std;
 class Solution{
-    
-public:
+    public:
     int maxDifference(string s)
     {
         unordered_map<char, int> mp;
