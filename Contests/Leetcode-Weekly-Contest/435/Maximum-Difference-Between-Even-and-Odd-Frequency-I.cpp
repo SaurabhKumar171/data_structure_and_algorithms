@@ -3,7 +3,6 @@
 using namespace std;
 class Solution{
     public:
-    
     int maxDifference(string s)
     {
         unordered_map<char, int> mp;
