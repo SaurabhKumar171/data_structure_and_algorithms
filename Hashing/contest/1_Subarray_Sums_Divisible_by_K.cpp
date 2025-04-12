@@ -13,6 +13,7 @@ public:
             sum += nums[i];
             int rem = sum % k;
 
+            
             //Acc. to rule kn + x; x is remainder if its -ve it can be paired with k - x 
             //as we can write kn - x (here rem is -ve (-x)) 
             //it'll be kn - x + k - k ; 
