@@ -62,7 +62,6 @@ public:
         ListNode *front = head->next;
         front->next = head;
         head->next = nullptr;
-
         return newHead;
     }
 };
