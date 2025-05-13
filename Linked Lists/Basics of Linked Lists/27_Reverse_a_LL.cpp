@@ -59,7 +59,6 @@ public:
 
         ListNode *newHead = reverseList(head->next);
 
-        
         ListNode *front = head->next;
         front->next = head;
         head->next = nullptr;
