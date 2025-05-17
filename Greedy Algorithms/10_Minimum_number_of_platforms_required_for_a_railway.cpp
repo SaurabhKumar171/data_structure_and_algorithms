@@ -50,8 +50,6 @@ class Solution{
 
             maxCnt = max(maxCnt, cnt);
         }
-
-
         return maxCnt;
     }
 };
