@@ -13,6 +13,7 @@ class Solution {
                     totalSum = (totalSum + minVal) % mod;
                 }
             }
+            
     
             return totalSum;
         }
