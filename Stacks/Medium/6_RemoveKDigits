@@ -4,6 +4,9 @@
 #include <unordered_map>
 using namespace std;
 
+
+// Optimal Approach : O(n) time complexity, O(n) space complexity
+
 class Solution {
 public:
     string removeKdigits(string nums, int k) {
