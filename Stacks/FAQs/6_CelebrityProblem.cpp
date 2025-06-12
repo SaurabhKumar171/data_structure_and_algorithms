@@ -30,3 +30,34 @@ class Solution {
           return -1; 
       }
   };
+
+
+// Brute Force Approach : O(n) time complexity, O(1) space complexity
+  class Solution
+{
+public:
+    int celebrity(vector<vector<int>> &M){  
+        int n = M.size();
+        
+        int top = 0, bottom = n - 1;
+
+       while(top < bottom){
+        if(M[top][bottom] == 1) top++;
+        else if(M[bottom][top] == 1) bottom--;
+        else{
+            top++;
+            bottom--;
+        }
+       }
+
+       if(top > bottom) return -1;
+
+        for(int i = 0; i < n; i++){
+            if(i == top) continue;
+
+            if(M[top][i] == 1 || M[i][top] == 0) return -1;
+        }
+
+        return top;
+    }
+};
