@@ -29,9 +29,11 @@ class Solution {
               auto [node, line] = q.front();
   
               if(node->left) q.push({node->left, line - 1});
-              if(node->right) q.push({node->right, line + 1});
+              if(node->right){ 
+                q.push({node->right, line + 1});
+                mpp[line] = node->data;
+            }
   
-              mpp[line] = node->data;
               q.pop();
           }
   
