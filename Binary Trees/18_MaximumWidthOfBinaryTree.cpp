@@ -1,3 +1,19 @@
+
+#include <iostream>
+#include <vector>
+#include <string>
+#include <map>
+using namespace std;
+
+// Definition for a binary tree node.
+struct TreeNode {
+    int data;
+    TreeNode *left;
+    TreeNode *right;
+     TreeNode(int val) : data(val) , left(nullptr) , right(nullptr) {}
+};
+
+//Approach :  O(n) time complexity, O(n) space complexity[recursion stack]
 class Solution {
     public:
         int widthOfBinaryTree(TreeNode* root) {
