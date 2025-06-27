@@ -22,7 +22,7 @@ struct TreeNode {
              TreeNode* node = q.front();
              q.pop();
  
-             if (node->data == start) res = node;
+             if (node->val == start) res = node;
              if (node->left != nullptr) {
                  mpp[node->left] = node;
                  q.push(node->left);
