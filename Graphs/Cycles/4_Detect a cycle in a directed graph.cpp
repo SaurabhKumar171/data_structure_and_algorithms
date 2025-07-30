@@ -2,7 +2,7 @@
 #include <vector>
 using namespace std;
 
-//Approach : O(V + E) time complexity ,  O(V + E) space complexity
+//Approach : DFS - O(V + E) time complexity ,  O(V + E) space complexity
 class Solution {
    private:
     bool dfs(int node, vector<int> adj[], vector<bool>& vis,
@@ -32,5 +32,39 @@ class Solution {
         }
 
         return false;
+    }
+};
+
+
+//Approach : BFS - O(V + E) time complexity ,  O(V + E) space complexity
+class Solution {
+   public:
+    bool isCyclic(int V, vector<int> adj[]) {
+        vector<int> inDegree(V, 0);
+
+        for(int i = 0; i < V; i++){
+            for(auto it: adj[i]) inDegree[it]++;
+        }
+
+        queue<int> q;
+        for(int i = 0; i < V; i++){
+            if(inDegree[i] == 0) q.push(i);
+        }
+
+        vector<int> ans;
+        while(!q.empty()){
+            auto node = q.front();
+            q.pop();
+
+            for(auto it: adj[node]){
+                inDegree[it]--;
+
+                if(inDegree[it] == 0) q.push(it);
+            }
+
+            ans.push_back(node);
+        }
+
+        return ans.size() < V;
     }
 };
