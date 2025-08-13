@@ -2,7 +2,7 @@
 #include <vector>
 using namespace std;
 
-//Approach : DFS - O(N + E) time complexity ,  O(N) space complexity
+//Approach : BFS - O(V + E) time complexity ,  O(V) space complexity
 class Solution {
 private:
     vector<int> topoSort(int V, vector<vector<int>> adj){
