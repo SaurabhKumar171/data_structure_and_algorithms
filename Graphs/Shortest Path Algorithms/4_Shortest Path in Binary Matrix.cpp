@@ -4,6 +4,12 @@
 #include <unordered_set>
 #include <set>
 using namespace std;
+
+// Time Complexity: O(N*M) (where N and M are the dimensions of the grid)
+// A simple BFS traversal takes O(V+E) time where V and E represent the number of cells and number of edges.
+// Because, V = N*M and E = 4*N*M, the overall time complexity is O(N*M).
+
+// Space Complexity: O(N*M) The distance array takes O(N*M) space and the queue space can go upto O(N*M) in the worst case.
 class Solution {
     bool isValid(int r, int c, int n, int m) {
         if (r >= 0 && c >= 0 && r < n && c < m) return true;
