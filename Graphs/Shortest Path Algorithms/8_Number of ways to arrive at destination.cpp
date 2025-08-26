@@ -5,46 +5,51 @@ using namespace std;
 
 class Solution {
    public:
-    int countPaths(int n, vector<vector<int>> &roads) {
+    int countPaths(int n, vector<vector<int>>& roads) {
         const int MOD = 1e9 + 7;
 
-        vector<vector<pair<int, int>>> adj(n);
-        for (int i = 0; i < roads.size(); i++) {
-            adj[roads[i][0]].push_back({roads[i][1], roads[i][2]});
-            adj[roads[i][1]].push_back({roads[i][0], roads[i][2]});
+        // Adjacency list: node -> (neighbor, weight)
+        vector<vector<pair<int,int>>> adj(n);
+        for (auto &road : roads) {
+            int u = road[0], v = road[1], w = road[2];
+            adj[u].push_back({v, w});
+            adj[v].push_back({u, w});
         }
 
-        priority_queue<pair<int, int>, vector<pair<int, int>>, greater<>> q;
+        // dist[i] = shortest distance from 0 to i
+        vector<long long> dist(n, LLONG_MAX);
+        // ways[i] = number of shortest paths from 0 to i
+        vector<int> ways(n, 0);
 
-        // count of distance, distance
-        vector<pair<int, int>> distances(n, {0, 1e9});
+        // Min-heap (distance, node)
+        priority_queue<pair<long long,int>, vector<pair<long long,int>>, greater<>> pq;
 
-        distances[0] = {1, 0};
-        q.push({0, 0});
+        dist[0] = 0;
+        ways[0] = 1;
+        pq.push({0, 0});
 
-        while (!q.empty()) {
-            int dist = q.top().first;
-            int node = q.top().second;
-            q.pop();
+        while (!pq.empty()) {
+            auto [d, node] = pq.top();
+            pq.pop();
 
-            for (auto it : adj[node]) {
-                int subNode = it.first;
-                int subWt = it.second;
+            if (d > dist[node]) continue; // stale state
 
-                int newWt = subWt + dist;
+            for (auto [next, weight] : adj[node]) {
+                long long newDist = d + weight;
 
-                if (newWt < distances[subNode].second) {
-                    // Found shorter path
-                    distances[subNode] = {distances[node].first, newWt};
-                    q.push({newWt, subNode});
+                if (newDist < dist[next]) {
+                    // Found a shorter path
+                    dist[next] = newDist;
+                    ways[next] = ways[node]; // inherit path count
+                    pq.push({newDist, next});
                 }
-                else if (newWt == distances[subNode].second) {
-                    // Found another shortest path
-                    distances[subNode].first = (distances[subNode].first + distances[node].first) % MOD;
+                else if (newDist == dist[next]) {
+                    // Found an additional shortest path
+                    ways[next] = (ways[next] + ways[node]) % MOD;
                 }
             }
         }
 
-        return distances[n - 1].first;
+        return ways[n - 1];       
     }
 };
