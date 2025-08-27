@@ -3,10 +3,11 @@
 #include <vector>
 using namespace std;
 
+using P = pair<long long, int>;
 class Solution {
-   public:
+public:
     int countPaths(int n, vector<vector<int>>& roads) {
-        const int MOD = 1e9 + 7;
+        const int mod = 1e9 + 7;
 
         // Adjacency list: node -> (neighbor, weight)
         vector<vector<pair<int,int>>> adj(n);
@@ -16,40 +17,32 @@ class Solution {
             adj[v].push_back({u, w});
         }
 
-        // dist[i] = shortest distance from 0 to i
-        vector<long long> dist(n, LLONG_MAX);
-        // ways[i] = number of shortest paths from 0 to i
+        priority_queue<P, vector<P>, greater<P>> pq;
         vector<int> ways(n, 0);
+        vector<long long> distances(n, LLONG_MAX);
 
-        // Min-heap (distance, node)
-        priority_queue<pair<long long,int>, vector<pair<long long,int>>, greater<>> pq;
-
-        dist[0] = 0;
-        ways[0] = 1;
         pq.push({0, 0});
+        distances[0] = 0, ways[0] = 1;
 
-        while (!pq.empty()) {
-            auto [d, node] = pq.top();
+        while(!pq.empty()){
+            auto [dist, node] = pq.top();
             pq.pop();
 
-            if (d > dist[node]) continue; // stale state
+            for(auto it: adj[node]){
+                int next = it.first, wt = it.second;
 
-            for (auto [next, weight] : adj[node]) {
-                long long newDist = d + weight;
-
-                if (newDist < dist[next]) {
-                    // Found a shorter path
-                    dist[next] = newDist;
-                    ways[next] = ways[node]; // inherit path count
+                long long newDist = dist + wt;
+                if(newDist < distances[next]){
+                    distances[next] = newDist;
+                    ways[next] = ways[node];
                     pq.push({newDist, next});
                 }
-                else if (newDist == dist[next]) {
-                    // Found an additional shortest path
-                    ways[next] = (ways[next] + ways[node]) % MOD;
+                else if(newDist == distances[next]){
+                    ways[next] = (ways[node] + ways[next])%mod;
                 }
             }
         }
 
-        return ways[n - 1];       
+        return ways[n - 1];
     }
 };
