@@ -3,6 +3,8 @@
 #include <vector>
 using namespace std;
 
+// Time Complexity:O(V*E) due to nested loops iterating through vertices and edges.
+// Space Complexity:O(V) to store the distances array.
 class Solution {
 public:
 	vector<int> bellman_ford(int V, vector<vector<int>>& edges, int S) {

@@ -2,6 +2,9 @@
 #include <iostream>
 #include <vector>
 using namespace std;
+
+// Time Complexity:O(n^3) due to three nested loops, where n is the number of vertices.
+// Space Complexity:O(1) as the algorithm operates in-place and uses a constant amount of extra space.
 class Solution {
 public:
 	void shortestDistance(vector<vector<int>>&matrix) {

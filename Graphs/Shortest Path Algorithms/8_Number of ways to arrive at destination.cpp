@@ -3,6 +3,10 @@
 #include <vector>
 using namespace std;
 
+
+// Time Complexity:O(E log V) where E is the number of roads and V is the number of nodes, due to the priority queue operations
+// Space Complexity:O(V + E) where V is the number of nodes and E is the number of roads, due to adjacency list, distances and ways vectors.
+
 using P = pair<long long, int>;
 class Solution {
 public:
