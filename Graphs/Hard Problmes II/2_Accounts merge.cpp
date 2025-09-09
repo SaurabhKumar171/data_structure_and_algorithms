@@ -4,6 +4,8 @@
 #include <unordered_map>
 using namespace std;
 
+// Time Complexity: O(NK log(NK)) (where N is the number of accounts and K is the maximum number of emails in an account)
+// O(NK α(NK)) is for union and find operations of disjoint set data structure where α is the inverse Ackermann function which is very slow growing function and for all practical purposes
 class DisjointSet {
    public:
     vector<int> rank, size, parent;
