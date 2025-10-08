@@ -95,3 +95,53 @@ class Solution {
         return func(m, n, matrix, dp);
     }
 };
+
+
+
+// Space Optimization
+// Time Complexity:O(m*n) due to the nested loops iterating through the matrix of size m x n.
+// Space Complexity:O(n) due to the use of two 1D arrays (prev and temp) of size n each, instead of a 2D dp table.
+class Solution {
+   private:
+    int func(int m, int n, vector<vector<int>>& matrix) {
+        vector<int> prev(n);
+        for (int i = m - 1; i >= 0; i--) {
+            if (i == m - 1) {
+                for (int j = n - 1; j >= 0; j--) {
+                    prev[j] = matrix[i][j];
+                }
+                continue;
+            }
+
+            vector<int> temp(n);
+            for (int j = n - 1; j >= 0; j--) {
+                int bottomLeft = INT_MAX, bottomRight = INT_MAX,
+                    bottom = INT_MAX;
+                if (j > 0) bottomLeft = prev[j - 1];
+
+                if (j < n - 1) bottomRight = prev[j + 1];
+
+                bottom = prev[j];
+
+                temp[j] =
+                    matrix[i][j] + min(bottomLeft, min(bottomRight, bottom));
+            }
+
+            prev = temp;
+        }
+
+        int res = INT_MAX;
+        for (int i = 0; i < n; i++) {
+            res = min(prev[i], res);
+        }
+        return res;
+    }
+
+public:
+    int minFallingPathSum(vector<vector<int>>& matrix) {
+        int m = matrix.size();
+        int n = matrix[0].size();
+
+        return func(m, n, matrix);   
+    }
+};
